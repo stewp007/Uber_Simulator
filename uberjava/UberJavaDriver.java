@@ -156,7 +156,7 @@ public class UberJavaDriver implements Runnable{
 				if(minutesToStart > 300){
 					UberJavaMain.rejectRide(rideNum);
 					rejections ++;
-					break;
+					continue;
 				}
 				if(isUberXPremium){
 					totalAmenities += UberJavaMain.getAmenities(rideNum);
@@ -217,7 +217,7 @@ public class UberJavaDriver implements Runnable{
 					System.out.println("Average Rating: 0.0");
 				}
 				
-				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.12676 * this.getSessionMinutes()) + this.getTotalTolls() + (0.0694*this.getSessionMinutes()))/(this.getSessionMinutes())*60));
+				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.12676 * this.getSessionMinutes()) + this.getTotalTolls() + (0.0694*this.getSessionMinutes()))/(this.getSessionMinutes())*60)+"\n");
 			} else if(getName().equals("Prateek")){
 				System.out.println("Total Cost: "+ (((0.14069 * this.getSessionMinutes()) + this.getTotalTolls() + (0.07708 * this.getSessionMinutes()))+(((this.getTotalMiles())/this.getCar().getMilesPerGallon())*3.50)+this.getTotalAmenities()));
 				System.out.println("Cost of Vehicle OwnerShip: "+ (0.14069 * this.getSessionMinutes()));
@@ -230,7 +230,7 @@ public class UberJavaDriver implements Runnable{
 				}catch(ArithmeticException e){
 					System.out.println("Average Rating: 0.0");
 				}
-				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.14069 * this.getSessionMinutes()) + this.getTotalTolls() + (0.07708 * this.getSessionMinutes()))/(this.getSessionMinutes())*60));
+				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.14069 * this.getSessionMinutes()) + this.getTotalTolls() + (0.07708 * this.getSessionMinutes()))/(this.getSessionMinutes())*60)+"\n");
 			} else{
 				System.out.println("Total Cost: "+ (((0.141134 * this.getSessionMinutes()) + this.getTotalTolls() + (0.077315 * this.getSessionMinutes()))+(((this.getTotalMiles())/this.getCar().getMilesPerGallon())*3.50)+this.getTotalAmenities()));
 				System.out.println("Cost of Vehicle OwnerShip: "+ (0.141134 * this.getSessionMinutes()));
@@ -243,7 +243,7 @@ public class UberJavaDriver implements Runnable{
 				}catch(ArithmeticException e){
 					System.out.println("Average Rating: 0.0");
 				}
-				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.141134 * this.getSessionMinutes()) + this.getTotalTolls() + (0.077315 * this.getSessionMinutes()))/(this.getSessionMinutes())*60));
+				System.out.println("Effectively hourly Earnings: "+ ((this.getTotalFares() * (3/4))-((0.141134 * this.getSessionMinutes()) + this.getTotalTolls() + (0.077315 * this.getSessionMinutes()))/(this.getSessionMinutes())*60)+"\n");
 			}
 			endSession();
 			running = false;

@@ -30,9 +30,9 @@ public class UberJavaMain{
 	public static String findRider(String info){
 		Pattern riderPat = Pattern.compile("Rider: ([A-Z][a-z]+)( [A-Z][a-z]+)?");
 		Matcher m = riderPat.matcher(info);
-		String rider = "No Name";
+		String rider = "My little buddy";
 		while(m.find()){
-			rider = m.group();
+			rider = m.group(1)+ m.group(2);
 		}
 		return rider;
 	}
